@@ -1,12 +1,20 @@
-from sdl2 import *
-import window
+import pygame
+
 
 def main():
 
-    SDL_Init(SDL_INIT_VIDEO | SDL_INIT_AUDIO | SDL_INIT_EVENTS)
-    window.run()
+    pygame.init()
+    surface = pygame.display.set_mode((400,300))
+    pygame.display.set_caption('Hello world')
 
-    return 0
+
+    while True:
+        for ev in pygame.event.get():
+            if ev.type == pygame.QUIT:
+                pygame.quit()
+                return
+
+    return
 
 
 if __name__ == "__main__":
